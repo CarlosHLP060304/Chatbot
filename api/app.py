@@ -180,4 +180,5 @@ def chat():
     return "Por favor, digite uma mensagem."
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    port = int(os.getenv('PORT', 5000))  # Obtém a porta da variável de ambiente, default para 5000
+    app.run(debug=True, host='0.0.0.0', port=port)  # Vincula à 0.0.0.0 para permitir conexões externas
